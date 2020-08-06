@@ -60,6 +60,15 @@ const signOutFailure = function (data) {
   $('#sign-out-message').text('Sorry but it looks like you\'re stuck here')
 }
 
+const createPeakSuccess = function (response) {
+  $('#create-peak-message').text('Peak created')
+  store.peak = response.peak
+}
+
+const createPeakFailure = function () {
+  $('#create-peak-message').text('something went wrong!')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -68,5 +77,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  createPeakSuccess,
+  createPeakFailure
 }

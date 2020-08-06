@@ -44,9 +44,30 @@ const signOut = function () {
   })
 }
 
+const createPeak = function (data) {
+  const name = data.name
+  const description = data.description
+  console.log(data.name)
+  return $.ajax({
+    url: config.apiUrl + '/peaks',
+    method: 'POST',
+    header: 'Content-Type: application/json',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      peak: {
+        name: name,
+        description: description
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createPeak
 }
