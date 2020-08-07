@@ -69,6 +69,14 @@ const createPeakFailure = function () {
   $('#create-peak-message').text('something went wrong!')
 }
 
+const updatePeakSuccess = function () {
+  $('#update-peak-message').text('Peak updated!')
+}
+
+const updatePeakFailure = function () {
+  $('#update-peak-message').text('Failed to update peak, try checking peak name')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -79,5 +87,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   createPeakSuccess,
-  createPeakFailure
+  createPeakFailure,
+  updatePeakSuccess,
+  updatePeakFailure
 }

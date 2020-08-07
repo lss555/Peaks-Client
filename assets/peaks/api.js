@@ -47,7 +47,7 @@ const signOut = function () {
 const createPeak = function (data) {
   const name = data.name
   const description = data.description
-  console.log(data.name)
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/peaks',
     method: 'POST',
@@ -64,10 +64,29 @@ const createPeak = function (data) {
   })
 }
 
+const updatePeak = function (data) {
+  // console.log('trying to get id', store.user.token)
+  const description = data.description
+  return $.ajax({
+    url: config.apiUrl + `/peaks/${store.peak._id}`,
+    method: 'PATCH',
+    header: 'Content-Type: application/json',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      peak: {
+        description: description
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  createPeak
+  createPeak,
+  updatePeak
 }

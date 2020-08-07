@@ -13,4 +13,5 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#create-peak').on('submit', authEvents.onCreatePeak)
+  $('#update-peak').on('submit', authEvents.onUpdatePeak)
 })

@@ -54,10 +54,20 @@ const onCreatePeak = function (event) {
     .catch(ui.createPeakFailure)
 }
 
+const onUpdatePeak = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updatePeak(formData)
+    .then(ui.updatePeakSuccess)
+    .catch(ui.updatePeakFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreatePeak
+  onCreatePeak,
+  onUpdatePeak
 }
