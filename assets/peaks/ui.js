@@ -110,7 +110,7 @@ const getAllPeaksFailure = function () {
 
 const getOnePeakSuccess = function (data) {
   console.log(data)
-  $('#get-one-peak-message').text('found peak')
+  $('#get-one-peak-message').text('Peak found! ' + JSON.stringify('name: ' + data.peak.name + ', description: ' + data.peak.description))
 }
 
 const getOnePeakFailure = function () {
