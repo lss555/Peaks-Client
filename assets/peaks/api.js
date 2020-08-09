@@ -64,20 +64,48 @@ const createPeak = function (data) {
   })
 }
 
-const updatePeak = function (data) {
-  // console.log('trying to get id', store.user.token)
-  const description = data.description
+// const updatePeak = function (id) {
+//   // console.log('trying to get id', store.user.token)
+//   const description = id.description
+//   return $.ajax({
+//     url: config.apiUrl + `/peaks/${store.peak._id}`,
+//     method: 'PATCH',
+//     header: 'Content-Type: application/json',
+//     headers: {
+//       Authorization: 'Bearer ' + store.user.token
+//     },
+//     data: {
+//       peak: {
+//         description: description
+//       }
+//     }
+//   })
+// }
+
+const getOnePeak = function (id) {
+  // store.peak = store.peak.description
+  // store.peak.name and store.peak.description has the goods
+  // URL peaks or peak? getting cannot read prop of _id
+  console.log(id)
   return $.ajax({
     url: config.apiUrl + `/peaks/${store.peak._id}`,
-    method: 'PATCH',
+    method: 'GET',
     header: 'Content-Type: application/json',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    },
-    data: {
-      peak: {
-        description: description
-      }
+    }
+  })
+}
+
+const getAllPeaks = function () {
+  // store.peak = store.peak.description
+  // store.peak.name and store.peak.description has the goods
+  return $.ajax({
+    url: config.apiUrl + '/peaks',
+    method: 'GET',
+    header: 'Content-Type: application/json',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
@@ -88,5 +116,7 @@ module.exports = {
   changePassword,
   signOut,
   createPeak,
-  updatePeak
+  // updatePeak,
+  getOnePeak,
+  getAllPeaks
 }

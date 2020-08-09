@@ -13,5 +13,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#create-peak').on('submit', authEvents.onCreatePeak)
-  $('#update-peak').on('submit', authEvents.onUpdatePeak)
+  // $('#update-peak').on('submit', authEvents.onUpdatePeak)
+  $('#get-one-peak').on('submit', authEvents.onGetOnePeak)
+  $('#get-all-peaks').on('click', authEvents.onGetAllPeaks)
 })

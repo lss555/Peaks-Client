@@ -8,10 +8,8 @@ const getFormFields = require('../../lib/get-form-fields')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log(event.target)
   const form = event.target
   const formData = getFormFields(form)
-  console.log(formData)
   api.signUp(formData)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -54,13 +52,29 @@ const onCreatePeak = function (event) {
     .catch(ui.createPeakFailure)
 }
 
-const onUpdatePeak = function (event) {
+// const onUpdatePeak = function (event) {
+//   event.preventDefault()
+//   const form = event.target
+//   const formData = getFormFields(form)
+//   api.updatePeak(formData)
+//     .then(ui.updatePeakSuccess)
+//     .catch(ui.updatePeakFailure)
+// }
+
+const onGetOnePeak = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
-  api.updatePeak(formData)
-    .then(ui.updatePeakSuccess)
-    .catch(ui.updatePeakFailure)
+  api.getOnePeak(formData)
+    .then(ui.getOnePeakSuccess)
+    .catch(ui.getOnePeakFailure)
+}
+
+const onGetAllPeaks = function (event) {
+  event.preventDefault()
+  api.getAllPeaks(event)
+    .then(ui.getAllPeaksSuccess)
+    .catch(ui.getAllPeaksFailure)
 }
 
 module.exports = {
@@ -69,5 +83,7 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onCreatePeak,
-  onUpdatePeak
+  // onUpdatePeak,
+  onGetOnePeak,
+  onGetAllPeaks
 }

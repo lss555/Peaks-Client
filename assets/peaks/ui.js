@@ -17,6 +17,7 @@ const signInSuccess = function (response) {
   $('#sign-in-message').text('Signed in!')
   store.user = response.user
   $('form').trigger('reset')
+  // console.log(store.peak) // undefined
 
   // hide and show for sign in
   $('#sign-up-message').hide()
@@ -62,6 +63,7 @@ const signOutFailure = function (data) {
 
 const createPeakSuccess = function (response) {
   $('#create-peak-message').text('Peak created')
+  console.log(response.peak)
   store.peak = response.peak
 }
 
@@ -69,12 +71,50 @@ const createPeakFailure = function () {
   $('#create-peak-message').text('something went wrong!')
 }
 
-const updatePeakSuccess = function () {
-  $('#update-peak-message').text('Peak updated!')
+// const updatePeakSuccess = function (response) {
+//   $('#update-peak-message').text('Peak updated!')
+//   store.peak = response.peak
+// }
+//
+// const updatePeakFailure = function () {
+//   $('#update-peak-message').text('Failed to update peak, try checking peak name')
+// }
+
+const getAllPeaksSuccess = function (data) {
+  const peakLength = data.peaks.length
+  const peakArray = data.peaks
+  for (let i = 0; i < peakLength; i++) {
+    console.log(peakArray[i].name)
+    $('#get-all-peaks-message').text(peakArray[i].name)
+  }
+  // const peakLength = data.peaks.length
+  // for (let i = 0; i < peakLength; i++) {
+  //
+  //   console.log(data.peaks[i])
+  //   $('#get-all-peaks-message').text(data.peaks[i])
+  // }
+
+  // console.log(data.peaks[0]) // need to access the objects inside peaks array
+  // data.peaks.forEach(function (data) {
+  //   console.log(data)
+  //   $('#get-all-peaks-message').text('ID = ', data)
+  // })
+  // $('#get-all-peaks-message').text('your ID\'s and peaks, ' + data.peaks._id)
 }
 
-const updatePeakFailure = function () {
-  $('#update-peak-message').text('Failed to update peak, try checking peak name')
+const getAllPeaksFailure = function () {
+  $('#get-all-peaks-message').text('Failure on all')
+}
+
+// needs getOnePeak here
+
+const getOnePeakSuccess = function (data) {
+  console.log(data)
+  $('#get-one-peak-message').text('found peak')
+}
+
+const getOnePeakFailure = function () {
+  $('#get-one-peak-message').text('find one peak failed')
 }
 
 module.exports = {
@@ -88,6 +128,10 @@ module.exports = {
   signOutFailure,
   createPeakSuccess,
   createPeakFailure,
-  updatePeakSuccess,
-  updatePeakFailure
+  // updatePeakSuccess,
+  // updatePeakFailure,
+  getAllPeaksSuccess,
+  getAllPeaksFailure,
+  getOnePeakSuccess,
+  getOnePeakFailure
 }
