@@ -79,27 +79,14 @@ const createPeakFailure = function () {
 // const updatePeakFailure = function () {
 //   $('#update-peak-message').text('Failed to update peak, try checking peak name')
 // }
-
+//  gets all peaks but only prints last peak, needs handlebars
 const getAllPeaksSuccess = function (data) {
   const peakLength = data.peaks.length
   const peakArray = data.peaks
   for (let i = 0; i < peakLength; i++) {
     console.log(peakArray[i].name)
-    $('#get-all-peaks-message').text(peakArray[i].name)
+    $('#get-all-peaks-message').text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
   }
-  // const peakLength = data.peaks.length
-  // for (let i = 0; i < peakLength; i++) {
-  //
-  //   console.log(data.peaks[i])
-  //   $('#get-all-peaks-message').text(data.peaks[i])
-  // }
-
-  // console.log(data.peaks[0]) // need to access the objects inside peaks array
-  // data.peaks.forEach(function (data) {
-  //   console.log(data)
-  //   $('#get-all-peaks-message').text('ID = ', data)
-  // })
-  // $('#get-all-peaks-message').text('your ID\'s and peaks, ' + data.peaks._id)
 }
 
 const getAllPeaksFailure = function () {
@@ -109,7 +96,6 @@ const getAllPeaksFailure = function () {
 // needs getOnePeak here
 
 const getOnePeakSuccess = function (data) {
-  console.log(data)
   $('#get-one-peak-message').text('Peak found! ' + JSON.stringify('name: ' + data.peak.name + ', description: ' + data.peak.description))
 }
 
