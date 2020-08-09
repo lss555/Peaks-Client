@@ -71,14 +71,14 @@ const createPeakFailure = function () {
   $('#create-peak-message').text('something went wrong!')
 }
 
-// const updatePeakSuccess = function (response) {
-//   $('#update-peak-message').text('Peak updated!')
-//   store.peak = response.peak
-// }
-//
-// const updatePeakFailure = function () {
-//   $('#update-peak-message').text('Failed to update peak, try checking peak name')
-// }
+const updatePeakSuccess = function (response) {
+  $('#update-peak-message').text('Peak updated!')
+}
+
+const updatePeakFailure = function () {
+  $('#update-peak-message').text('Failed to update peak, try checking peak name')
+}
+
 //  gets all peaks but only prints last peak, needs handlebars
 const getAllPeaksSuccess = function (data) {
   const peakLength = data.peaks.length
@@ -114,8 +114,8 @@ module.exports = {
   signOutFailure,
   createPeakSuccess,
   createPeakFailure,
-  // updatePeakSuccess,
-  // updatePeakFailure,
+  updatePeakSuccess,
+  updatePeakFailure,
   getAllPeaksSuccess,
   getAllPeaksFailure,
   getOnePeakSuccess,

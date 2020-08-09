@@ -64,23 +64,23 @@ const createPeak = function (data) {
   })
 }
 
-// const updatePeak = function (id) {
-//   // console.log('trying to get id', store.user.token)
-//   const description = id.description
-//   return $.ajax({
-//     url: config.apiUrl + `/peaks/${store.peak._id}`,
-//     method: 'PATCH',
-//     header: 'Content-Type: application/json',
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     },
-//     data: {
-//       peak: {
-//         description: description
-//       }
-//     }
-//   })
-// }
+const updatePeak = function (id) {
+  // console.log('trying to get id', store.user.token)
+  const description = id.description
+  return $.ajax({
+    url: config.apiUrl + `/peaks/${store.peak._id}`,
+    method: 'PATCH',
+    header: 'Content-Type: application/json',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {
+      peak: {
+        description: description
+      }
+    }
+  })
+}
 
 const getOnePeak = function (id) {
   // store.peak = store.peak.description
@@ -116,7 +116,7 @@ module.exports = {
   changePassword,
   signOut,
   createPeak,
-  // updatePeak,
+  updatePeak,
   getOnePeak,
   getAllPeaks
 }

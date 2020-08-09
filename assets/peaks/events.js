@@ -52,14 +52,14 @@ const onCreatePeak = function (event) {
     .catch(ui.createPeakFailure)
 }
 
-// const onUpdatePeak = function (event) {
-//   event.preventDefault()
-//   const form = event.target
-//   const formData = getFormFields(form)
-//   api.updatePeak(formData)
-//     .then(ui.updatePeakSuccess)
-//     .catch(ui.updatePeakFailure)
-// }
+const onUpdatePeak = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.updatePeak(formData)
+    .then(ui.updatePeakSuccess)
+    .catch(ui.updatePeakFailure)
+}
 
 const onGetOnePeak = function (event) {
   event.preventDefault()
@@ -83,7 +83,7 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onCreatePeak,
-  // onUpdatePeak,
+  onUpdatePeak,
   onGetOnePeak,
   onGetAllPeaks
 }
