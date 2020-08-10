@@ -97,6 +97,18 @@ const getOnePeak = function (id) {
   })
 }
 
+const deleteOnePeak = function (id) {
+  console.log(id)
+  return $.ajax({
+    url: config.apiUrl + `/peaks/${store.peak._id}`,
+    method: 'DELETE',
+    header: 'Content-Type: application/json',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 const getAllPeaks = function () {
   // store.peak = store.peak.description
   // store.peak.name and store.peak.description has the goods
@@ -118,5 +130,6 @@ module.exports = {
   createPeak,
   updatePeak,
   getOnePeak,
-  getAllPeaks
+  getAllPeaks,
+  deleteOnePeak
 }

@@ -65,6 +65,7 @@ const createPeakSuccess = function (response) {
   $('#create-peak-message').text('Peak created')
   console.log(response.peak)
   store.peak = response.peak
+  $('form').trigger('reset')
 }
 
 const createPeakFailure = function () {
@@ -103,6 +104,14 @@ const getOnePeakFailure = function () {
   $('#get-one-peak-message').text('find one peak failed')
 }
 
+const deleteOnePeakSuccess = function () {
+  $('#delete-one-peak-message').text('Successfully deleted')
+}
+
+const deleteOnePeakFailure = function () {
+  $('#delete-one-peak-message').text('failed to delete')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -119,5 +128,7 @@ module.exports = {
   getAllPeaksSuccess,
   getAllPeaksFailure,
   getOnePeakSuccess,
-  getOnePeakFailure
+  getOnePeakFailure,
+  deleteOnePeakSuccess,
+  deleteOnePeakFailure
 }

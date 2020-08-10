@@ -16,4 +16,5 @@ $(() => {
   $('#update-peak').on('submit', authEvents.onUpdatePeak)
   $('#get-one-peak').on('submit', authEvents.onGetOnePeak)
   $('#get-all-peaks').on('click', authEvents.onGetAllPeaks)
+  $('#delete-one-peak').on('submit', authEvents.onDeleteOnePeak)
 })

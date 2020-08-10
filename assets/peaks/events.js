@@ -70,6 +70,15 @@ const onGetOnePeak = function (event) {
     .catch(ui.getOnePeakFailure)
 }
 
+const onDeleteOnePeak = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  api.deleteOnePeak(formData)
+    .then(ui.deleteOnePeakSuccess)
+    .catch(ui.deleteOnePeakFailure)
+}
+
 const onGetAllPeaks = function (event) {
   event.preventDefault()
   api.getAllPeaks(event)
@@ -85,5 +94,6 @@ module.exports = {
   onCreatePeak,
   onUpdatePeak,
   onGetOnePeak,
-  onGetAllPeaks
+  onGetAllPeaks,
+  onDeleteOnePeak
 }
