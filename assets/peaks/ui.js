@@ -98,6 +98,7 @@ const getAllPeaksSuccess = function (data) {
   $('.handlebarContainer').append(peaksPageHtml)
   // console.log({{> peak-list}})
   $('#change-password-message').hide()
+  $('#sign-in-message').hide()
 }
 
 // .text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
@@ -119,6 +120,7 @@ const getOnePeakSuccess = function (data) {
   $('#get-one-peak-message').text('Peak found! ' + JSON.stringify('name: ' + data.peak.name + ', description: ' + data.peak.description))
   $('form').trigger('reset')
   $('#change-password-message').hide()
+  $('#sign-in-message').hide()
 }
 
 const getOnePeakFailure = function () {
@@ -129,6 +131,7 @@ const deleteOnePeakSuccess = function () {
   $('#delete-one-peak-message').text('Successfully deleted')
   $('form').trigger('reset')
   $('#change-password-message').hide()
+  $('#sign-in-message').hide()
 }
 
 const deleteOnePeakFailure = function () {
