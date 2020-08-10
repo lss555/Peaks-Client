@@ -74,6 +74,7 @@ const createPeakSuccess = function (response) {
   store.peak = response.peak
   $('form').trigger('reset')
   $('#change-password-message').hide()
+  $('#sign-in-message').hide()
 }
 
 const createPeakFailure = function () {
@@ -84,6 +85,7 @@ const updatePeakSuccess = function (response) {
   $('#update-peak-message').text('Peak updated!')
   $('form').trigger('reset')
   $('#change-password-message').hide()
+  $('#sign-in-message').hide()
 }
 
 const updatePeakFailure = function () {
