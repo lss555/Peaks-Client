@@ -34,6 +34,7 @@ const signInSuccess = function (response) {
   $('#get-one-peak').show()
   $('#get-all-peaks').show()
   $('#delete-one-peak').show()
+  $('#findYourPeaks').hide()
 }
 
 const signInFailure = function (data) {
@@ -57,9 +58,7 @@ const signOutSuccess = function (data) {
   $('#create-game').hide()
   $('.container').hide()
   $('#sign-out').hide()
-  $('#games-played').hide()
   $('#message').hide()
-  $('#games-played-message').hide()
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
 }
@@ -70,7 +69,6 @@ const signOutFailure = function (data) {
 
 const createPeakSuccess = function (response) {
   $('#create-peak-message').text('Peak created')
-  console.log(response.peak)
   store.peak = response.peak
   $('form').trigger('reset')
   $('#change-password-message').hide()

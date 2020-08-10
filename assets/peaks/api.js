@@ -47,7 +47,6 @@ const signOut = function () {
 const createPeak = function (data) {
   const name = data.name
   const description = data.description
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/peaks',
     method: 'POST',
@@ -65,8 +64,6 @@ const createPeak = function (data) {
 }
 
 const updatePeak = function (peak) {
-  // console.log('trying to get id', store.user.token)
-  console.log(peak.id)
   const description = peak.description
   return $.ajax({
     url: config.apiUrl + `/peaks/${peak.id}`,
@@ -84,10 +81,6 @@ const updatePeak = function (peak) {
 }
 
 const getOnePeak = function (peak) {
-  // store.peak = store.peak.description
-  // store.peak.name and store.peak.description has the goods
-  // URL peaks or peak? getting cannot read prop of _id
-  // console.log(id)
   return $.ajax({
     url: config.apiUrl + `/peaks/${peak.id}`,
     method: 'GET',
@@ -99,7 +92,6 @@ const getOnePeak = function (peak) {
 }
 
 const deleteOnePeak = function (peak) {
-  console.log(peak)
   return $.ajax({
     url: config.apiUrl + `/peaks/${peak.id}`,
     method: 'DELETE',
