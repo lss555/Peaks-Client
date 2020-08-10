@@ -27,6 +27,11 @@ const signInSuccess = function (response) {
   $('#sign-out').show()
   $('#change-password').show()
   $('#sign-up').hide()
+  $('#create-peak').show()
+  $('#update-peak').show()
+  $('#get-one-peak').show()
+  $('#get-all-peaks').show()
+  $('#delete-one-peak').show()
 }
 
 const signInFailure = function (data) {
@@ -66,6 +71,7 @@ const createPeakSuccess = function (response) {
   console.log(response.peak)
   store.peak = response.peak
   $('form').trigger('reset')
+  $('#change-password-message').hide()
 }
 
 const createPeakFailure = function () {
@@ -75,6 +81,7 @@ const createPeakFailure = function () {
 const updatePeakSuccess = function (response) {
   $('#update-peak-message').text('Peak updated!')
   $('form').trigger('reset')
+  $('#change-password-message').hide()
 }
 
 const updatePeakFailure = function () {
@@ -89,6 +96,7 @@ const getAllPeaksSuccess = function (data) {
     console.log(peakArray[i].name)
     $('#get-all-peaks-message').text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
   }
+  $('#change-password-message').hide()
 }
 
 const getAllPeaksFailure = function () {
@@ -100,6 +108,7 @@ const getAllPeaksFailure = function () {
 const getOnePeakSuccess = function (data) {
   $('#get-one-peak-message').text('Peak found! ' + JSON.stringify('name: ' + data.peak.name + ', description: ' + data.peak.description))
   $('form').trigger('reset')
+  $('#change-password-message').hide()
 }
 
 const getOnePeakFailure = function () {
@@ -109,6 +118,7 @@ const getOnePeakFailure = function () {
 const deleteOnePeakSuccess = function () {
   $('#delete-one-peak-message').text('Successfully deleted')
   $('form').trigger('reset')
+  $('#change-password-message').hide()
 }
 
 const deleteOnePeakFailure = function () {

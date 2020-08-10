@@ -64,11 +64,12 @@ const createPeak = function (data) {
   })
 }
 
-const updatePeak = function (id) {
+const updatePeak = function (peak) {
   // console.log('trying to get id', store.user.token)
-  const description = id.description
+  console.log(peak.id)
+  const description = peak.description
   return $.ajax({
-    url: config.apiUrl + `/peaks/${store.peak._id}`,
+    url: config.apiUrl + `/peaks/${peak.id}`,
     method: 'PATCH',
     header: 'Content-Type: application/json',
     headers: {
@@ -82,13 +83,13 @@ const updatePeak = function (id) {
   })
 }
 
-const getOnePeak = function (id) {
+const getOnePeak = function (peak) {
   // store.peak = store.peak.description
   // store.peak.name and store.peak.description has the goods
   // URL peaks or peak? getting cannot read prop of _id
-  console.log(id)
+  // console.log(id)
   return $.ajax({
-    url: config.apiUrl + `/peaks/${store.peak._id}`,
+    url: config.apiUrl + `/peaks/${peak.id}`,
     method: 'GET',
     header: 'Content-Type: application/json',
     headers: {
@@ -97,10 +98,10 @@ const getOnePeak = function (id) {
   })
 }
 
-const deleteOnePeak = function (id) {
-  console.log(id)
+const deleteOnePeak = function (peak) {
+  console.log(peak)
   return $.ajax({
-    url: config.apiUrl + `/peaks/${store.peak._id}`,
+    url: config.apiUrl + `/peaks/${peak.id}`,
     method: 'DELETE',
     header: 'Content-Type: application/json',
     headers: {
