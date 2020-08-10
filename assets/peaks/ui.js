@@ -74,6 +74,7 @@ const createPeakFailure = function () {
 
 const updatePeakSuccess = function (response) {
   $('#update-peak-message').text('Peak updated!')
+  $('form').trigger('reset')
 }
 
 const updatePeakFailure = function () {
@@ -98,6 +99,7 @@ const getAllPeaksFailure = function () {
 
 const getOnePeakSuccess = function (data) {
   $('#get-one-peak-message').text('Peak found! ' + JSON.stringify('name: ' + data.peak.name + ', description: ' + data.peak.description))
+  $('form').trigger('reset')
 }
 
 const getOnePeakFailure = function () {
@@ -106,6 +108,7 @@ const getOnePeakFailure = function () {
 
 const deleteOnePeakSuccess = function () {
   $('#delete-one-peak-message').text('Successfully deleted')
+  $('form').trigger('reset')
 }
 
 const deleteOnePeakFailure = function () {
