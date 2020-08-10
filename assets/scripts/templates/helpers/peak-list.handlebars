@@ -1,0 +1,11 @@
+
+<div class='handlebarContainer'>
+  <h2>Peaks: </h2>
+  <ul id="peaks">
+    {{#each peaks as |peak|}}
+    <li>
+      {{peak.name}}, ID: {{peak._id}}
+    </li>
+  {{/each}}
+  </ul>
+</div>

@@ -1,5 +1,7 @@
 const store = require('../scripts/store')
 
+const peaksPageTemplate = require('../scripts/templates/helpers/peak-list.handlebars')
+
 /* eslint-env jquery */
 
 // sign up ------------------->
@@ -88,20 +90,26 @@ const updatePeakFailure = function () {
   $('#update-peak-message').text('Failed to update peak, try checking peak name')
 }
 
-//  gets all peaks but only prints last peak, needs handlebars
+//  get all peaks needs handlebars
 const getAllPeaksSuccess = function (data) {
-  const peakLength = data.peaks.length
-  const peakArray = data.peaks
-  for (let i = 0; i < peakLength; i++) {
-    console.log(peakArray[i].name)
-    $('#get-all-peaks-message').text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
-  }
+  const peaksPageHtml = peaksPageTemplate({ peaks: data.peaks })
+  $('.handlebarContainer').append(peaksPageHtml)
+  // console.log({{> peak-list}})
   $('#change-password-message').hide()
 }
+
+// .text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
 
 const getAllPeaksFailure = function () {
   $('#get-all-peaks-message').text('Failure on all')
 }
+//
+// for loop for printing all peaks 27x time each
+// for (let i = 0; i < peakLength; i++) {
+//   console.log(peakArray[i].name)
+//   // $('ul').append()
+//   $('ul').append(peakArray.map(t => $('<li>').text(peakArray[i].name + ' ' + peakArray[i]._id)))
+// }
 
 // needs getOnePeak here
 
