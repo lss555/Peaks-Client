@@ -1,32 +1,25 @@
-# Application Title: A Description
+# Peaks client: A Description
 
-This application allows the user to do x, y, and z. Maybe here's a reason why I
-wanted to do this project, or came up with this idea.
+This application allows the user to make an account and log peaks that they've climbed, hiked, or ran.  It offers a secure log in process and the user can make, edit, delete, and view there peaks and see peaks from other users as well.  It acts as a digital "peak journal" for the user.
 
-## Important Links
+## Links
 
-- [Other Repo](www.link.com)
-- [Deployed API](www.link.com)
-- [Deployed Client](www.link.com)
+- [Github api](https://github.com/lss555/Peaks-api)
+- [Github client](https://github.com/lss555/Peaks-Client)
+- [Deployed API](https://ancient-taiga-30748.herokuapp.com/)
+- [Deployed Client](https://lss555.github.io/Peaks-Client/)
 
 ## Planning Story
 
-Lorem ipsum dolor amet cloud bread letterpress squid actually, single-origin
-coffee williamsburg af poutine fingerstache austin semiotics paleo man braid
-vexillologist. Tumeric literally banjo pickled disrupt cold-pressed thundercats
-shoreditch try-hard health goth intelligentsia pop-up small batch skateboard
-farm-to-table. Meh tofu fam, direct trade tattooed stumptown etsy everyday
-carry activated charcoal. Neutra cornhole polaroid literally salvia, listicle
-tofu.
+I originally planned to make the application to only be able to view the owners peaks but later decided to make it able to views everyones peaks and descriptions because I think that's alot funner because I would be stoked to see how Jeff climbed xyz peak and what thought about it.  To plan I used the old but reliable post it notes to plan each action and how I wanted to work and then just completed each action one by one.
 
 ### User Stories
 
-- As a user I want to sign in/up
-- As a user I want to Create a new < resource >
-- As a user I want to Read multiple < resources >
-- As a user I want to Read a single < resource >
-- As a user I want to Update a < resource > I own
-- As a user I want to Delete a < resource > I own
+As a user I want to be able to log the peak name
+As a user I want to be able to log the distance hiked/climbed/ran (can clump as 1 distance traveled in miles)
+As a user I want to be able to sign up
+As a user I want to be able to sign in and view my peaks stats
+As a user I want to be able to view other peoples stats
 
 ### Technologies Used
 
@@ -37,15 +30,15 @@ tofu.
 
 ### Unsolved Problems
 
-- Still need to ....
-- Would like to eventually ....
+- Still I would like to make usernames so you can view who logged peaks and there description
+- Eventually I would like to make it so you can add images to your peaks.
 
 ## Images
 
 #### Wireframe:
-![wireframe](https://lucidchart.zendesk.com/hc/article_attachments/360001080866/Facebook_Wireframe_-_New_Page.png)
+![wireframe](https://imgur.com/tFhallp)
 
 ---
 
 #### ERD:
-![ERD](https://www.smartdraw.com/entity-relationship-diagram/img/cardinality.jpg?bn=1510011144)
+![ERD](https://imgur.com/T5uOOs2)
