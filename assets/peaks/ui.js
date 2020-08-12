@@ -1,6 +1,10 @@
 const store = require('../scripts/store')
 
-const peaksPageTemplate = require('../scripts/templates/helpers/peak-list.handlebars')
+// const peaksTemplate = require('../scripts/templates/helpers/peak-list.handlebars')
+
+// const Handlebars = require('../../node_modules/handlebars/dist')
+
+const Handlebars = require('handlebars')
 
 /* eslint-env jquery */
 
@@ -92,9 +96,17 @@ const updatePeakFailure = function () {
 
 //  get all peaks needs handlebars
 const getAllPeaksSuccess = function (data) {
-  const peaksPageHtml = peaksPageTemplate({ peaks: data.peaks })
-  $('.handlebarContainer').append(peaksPageHtml)
-  // console.log({{> peak-list}})
+  // const peaksPageHtml = peaksPageTemplate({ peaks: data.peaks })
+  // $('#peaks-template').html()
+  // $('.handlebarContainer').append(peaksPageHtml)
+  $('#get-all-peaks').ready(function () {
+    // handle bars
+    const peaksTemplate = $('#peaks-template').html()
+    const compiledPeaksTemplate = Handlebars.compile(peaksTemplate)
+    $('.peaks-list-container').html(compiledPeaksTemplate(data))
+  // ending handlebars
+  })
+
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
 }

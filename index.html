@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Push more peaks</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -94,12 +94,18 @@
 <button>Get all peaks and peak ID's</button>
 </div>
 
-<div class="handlebarContainer">
-  <!-- <h2>Peaks: </h2> -->
-  <ul id="peaks">
-    <!-- {{> peak-list}} -->
-  </ul>
-</div>
+<!-- <div class="handlebarContainer"> -->
+  <h2>Peaks</h2>
+  <ul id="peaks" class="peaks-list-container"></ul>
+
+    <script id="peaks-template" type="text/x-handlebars-template">
+      {{#each peaks}}
+      <li class="peakz">
+      <h2>{{name}}</h2>
+      <p>Peak description: {{description}}</p>
+      </li>
+      {{/each}}
+    </script>
 
     </body>
 </html>

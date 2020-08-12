@@ -1,7 +1,9 @@
 
-<div class='handlebarContainer'>
-  <h2>Peaks: </h2>
-  <ul id="peaks">
+<div class='peaks-list-container'>
+  <h2>{{name}} </h2>
+  {{#with story}}
+  <ul id='peaks'>
+    {{/with}}
     {{#each peaks as |peak|}}
     <li>
       {{peak.name}}, ID: {{peak._id}}
