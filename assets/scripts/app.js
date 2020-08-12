@@ -24,4 +24,5 @@ $(() => {
   $('#delete-one-peak').hide()
   $('#sign-out').hide()
   $('#change-password').hide()
+  $('#get-all-peaks-header').hide()
 })

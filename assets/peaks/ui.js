@@ -65,6 +65,18 @@ const signOutSuccess = function (data) {
   $('#message').hide()
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
+  $('#get-all-peaks-header').hide()
+  $('#create-peak').hide()
+  $('#update-peak').hide()
+  $('#get-one-peak').hide()
+  $('#get-all-peaks').hide()
+  $('#delete-one-peak').hide()
+  $('#findYourPeaks').show()
+  $('#create-peak-message').hide()
+  $('.peaks-list-container').hide()
+  $('#update-peak-message').hide()
+  $('#get-one-peak-message').hide()
+  $('#delete-one-peak-message').hide()
 }
 
 const signOutFailure = function (data) {
@@ -106,7 +118,7 @@ const getAllPeaksSuccess = function (data) {
     $('.peaks-list-container').html(compiledPeaksTemplate(data))
   // ending handlebars
   })
-
+  $('#get-all-peaks-header').show()
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
 }
