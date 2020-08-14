@@ -4,11 +4,10 @@
   border-bottom: 2px solid black;
   display: flex;
   justify-content: center;
-  margin: 10px;
 }
 
-.signOut {
-  margin-left: 10px;
+.authenticated {
+  margin: 10px;
 }
 
 * {
@@ -21,7 +20,7 @@ body {
 }
 
 .signIn {
-  padding-left: 10px;
+  margin: 10px;
 }
 
 .signOutButton {
@@ -31,4 +30,32 @@ body {
 h3 {
   display: flex;
   justify-content: center;
+}
+
+.createpeaks {
+  margin: 10px;
+}
+
+.signupdiv {
+  margin: 10px;
+}
+
+.changepasswordiv {
+  margin: 10px;
+}
+
+.updatepeak {
+  margin: 10px;
+}
+
+.getonepeak {
+  margin: 10px
+}
+
+.deleteonepeak {
+  margin: 10px;
+}
+
+.getallpeaks {
+  margin: 10px;
 }

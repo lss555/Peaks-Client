@@ -14,6 +14,7 @@
     <body>
       <h1 class="title">PEAKS🌋</h1>
 <div class="auth">
+  <div class=signupdiv>
   <section id="sign-up-section">
     <form id="sign-up">
       <button type="submit" id-"sign-up-button">Sign Up</button>
@@ -22,8 +23,8 @@
       <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password">
     </form>
   </section>
-
   <p id="sign-up-message"></p>
+</div>
 
   <!-- sign in -->
 <div class="signIn">
@@ -35,62 +36,65 @@
   <p id="sign-in-message"></p>
 </div>
   <!-- change-password -->
-
+<div class="changepassworddiv">
 <form id="change-password">
   <button type="submit">Change Password</button>
   <input name="passwords[old]" type="password" placeholder="Old Password">
   <input name="passwords[new]" type="password" placeholder="New Password">
 </form>
 <p id="change-password-message"></p>
-
+</div>
 <!-- sign out -->
 
-<div class="signOut">
-<section class="authenticated">
+<div class="signoutdiv">
+<!-- <section class="authenticated"> -->
   <form id="sign-out">
-    <button class="signOutButton" type="submit">Sign Out</button>
+    <button type="submit">Sign Out</button>
   </form>
-</section>
+<!-- </section> -->
 </div>
 </div>
 <h3 id="findYourPeaks">Sign in to find your peaks!</h3>
-<!-- create a peak -->
 
+<!-- create a peak -->
+<div class="createpeaks">
 <form id="create-peak">
 <button type="submit">Log New Peak</button>
 <input name="name" type="text" placeholder="Peak Name">
 <input name="description" type="text" placeholder="description">
 </form>
 <p id="create-peak-message"></p>
-
+</div>
 <!-- update peak -->
 
+<div class="updatepeak">
 <form id="update-peak">
 <button type="submit">Update Peak</button>
 <input name="id" type="text" placeholder="Peak ID">
 <input name="description" type="text" placeholder="Update description">
 </form>
 <p id="update-peak-message"></p>
-
+</div>
 <!-- get one peak -->
-
+<div class="getonepeak">
 <form id="get-one-peak">
   <button>Find One Peak</button>
   <input name="id" type="text" placeholder="Peak ID">
 </form>
 <p id="get-one-peak-message"></p>
-
+</div>
 <!-- Delete one peak -->
 
+<div class="deleteonepeak">
 <form id="delete-one-peak">
   <button>Delete One Peak</button>
   <input name="id" type="text" placeholder="Peak ID">
 </form>
 <p id="delete-one-peak-message"></p>
-
+</div>
 <!-- get all peaks -->
 
-<div id="get-all-peaks">
+<div id="get-all-peaks" class="getallpeaks">
 <button>Get all peaks and peak ID's</button>
 </div>
 

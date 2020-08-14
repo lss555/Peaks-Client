@@ -10,17 +10,18 @@ const Handlebars = require('handlebars')
 
 // sign up ------------------->
 const signUpSuccess = function () {
-  $('#sign-up-message').text('Succesfully signed up!')
-  $('#sign-up').hide()
+  $('#sign-up-message').text('Succesfully signed up!').show()
+  $('form').trigger('reset')
 }
 
 const signUpFailure = function () {
-  $('#sign-up-message').text('email already in use')
+  $('#sign-up-message').text('email already in use').show()
+  $('form').trigger('reset')
 }
 
 // sign in ----------------------->
 const signInSuccess = function (response) {
-  $('#sign-in-message').text('Signed in!')
+  $('#sign-in-message').text('Signed in!').show()
   store.user = response.user
   $('form').trigger('reset')
   // console.log(store.peak) // undefined
@@ -42,27 +43,26 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (data) {
-  $('#sign-in-message').text('Failed to sign in')
+  $('#sign-in-message').text('Failed to sign in').show()
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function (response) {
-  $('#change-password-message').text('Password changed!')
+  $('#change-password-message').text('Password changed!').show()
   $('form').trigger('reset')
 }
 const changePasswordFailure = function () {
-  $('#change-password-message').text('Failed to change password')
+  $('#change-password-message').text('Failed to change password').show()
 }
 
 const signOutSuccess = function (data) {
-  $('#sign-out-message').text('Signed out!')
+  $('#sign-out-message').text('Signed out!').show()
   store.user = null
   $('#sign-up').show()
   $('#sign-in').show()
   $('#change-password').hide()
   $('#create-game').hide()
-  $('.container').hide()
   $('#sign-out').hide()
-  $('#message').hide()
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
   $('#get-all-peaks-header').hide()
@@ -84,7 +84,7 @@ const signOutFailure = function (data) {
 }
 
 const createPeakSuccess = function (response) {
-  $('#create-peak-message').text('Peak created')
+  $('#create-peak-message').text('Peak created').show()
   store.peak = response.peak
   $('form').trigger('reset')
   $('#change-password-message').hide()
@@ -92,11 +92,12 @@ const createPeakSuccess = function (response) {
 }
 
 const createPeakFailure = function () {
-  $('#create-peak-message').text('something went wrong!')
+  $('#create-peak-message').text('something went wrong!').show()
+  $('form').trigger('reset')
 }
 
 const updatePeakSuccess = function (response) {
-  $('#update-peak-message').text('Peak updated!')
+  $('#update-peak-message').text('Peak updated!').show()
   $('form').trigger('reset')
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
@@ -104,6 +105,7 @@ const updatePeakSuccess = function (response) {
 
 const updatePeakFailure = function () {
   $('#update-peak-message').text('Failed to update peak, try checking peak name')
+  $('form').trigger('reset')
 }
 
 //  get all peaks needs handlebars
@@ -121,12 +123,14 @@ const getAllPeaksSuccess = function (data) {
   $('#get-all-peaks-header').show()
   $('#change-password-message').hide()
   $('#sign-in-message').hide()
+  $('form').trigger('reset')
 }
 
 // .text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
 
 const getAllPeaksFailure = function () {
   $('#get-all-peaks-message').text('Failure on all')
+  $('form').trigger('reset')
 }
 //
 // for loop for printing all peaks 27x time each
@@ -147,6 +151,7 @@ const getOnePeakSuccess = function (data) {
 
 const getOnePeakFailure = function () {
   $('#get-one-peak-message').text('find one peak failed')
+  $('form').trigger('reset')
 }
 
 const deleteOnePeakSuccess = function () {
@@ -158,6 +163,7 @@ const deleteOnePeakSuccess = function () {
 
 const deleteOnePeakFailure = function () {
   $('#delete-one-peak-message').text('failed to delete')
+  $('form').trigger('reset')
 }
 
 module.exports = {
