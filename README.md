@@ -36,10 +36,11 @@ As a user I want to be able to view other peoples stats
 ## Images
 
 #### Wireframe:
-![wireframe](https://imgur.com/tFhallp)
+![wireframe]
+https://imgur.com/tFhallp
 
 ---
 
 #### ERD:
-![ERD](https://imgur.com/T5uOOs2)
+![ERD]
 https://imgur.com/T5uOOs2
