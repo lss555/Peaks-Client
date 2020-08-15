@@ -42,3 +42,4 @@ As a user I want to be able to view other peoples stats
 
 #### ERD:
 ![ERD](https://imgur.com/T5uOOs2)
+https://imgur.com/T5uOOs2
