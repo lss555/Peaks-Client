@@ -4,10 +4,8 @@
       <title>Push more peaks</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
@@ -47,11 +45,9 @@
 <!-- sign out -->
 
 <div class="signoutdiv">
-<!-- <section class="authenticated"> -->
   <form id="sign-out">
     <button type="submit">Sign Out</button>
   </form>
-<!-- </section> -->
 </div>
 </div>
 <h3 id="findYourPeaks">Sign in to find your peaks!</h3>
@@ -81,7 +77,7 @@
   <button>Find One Peak</button>
   <input name="id" type="text" placeholder="Peak ID">
 </form>
-<p id="get-one-peak-message"></p>
+<p id="get-one-peak-message" class="gopm"></p>
 </div>
 <!-- Delete one peak -->
 
@@ -90,27 +86,19 @@
   <button>Delete One Peak</button>
   <input name="id" type="text" placeholder="Peak ID">
 </form>
-<p id="delete-one-peak-message"></p>
+<p id="delete-one-peak-message" class="dopm"></p>
 </div>
 <!-- get all peaks -->
-
-<div id="get-all-peaks" class="getallpeaks">
+<div class="getallpeaks">
+<div id="get-all-peaks">
 <button>Get all peaks and peak ID's</button>
 </div>
+</div>
 
-<!-- <div class="handlebarContainer"> -->
-  <h2 id="get-all-peaks-header">Peaks</h2>
-  <ul id="peaks" class="peaks-list-container"></ul>
-
-    <script id="peaks-template" type="text/x-handlebars-template">
-      {{#each peaks}}
-      <li class="peakz">
-      <h2>{{name}}</h2>
-      <p>Peak description: {{description}}</p>
-      <p>ID: {{_id}}</p>
-      </li>
-      {{/each}}
-    </script>
+  <div class="handlebarContainer">
+    <ul id="peaks">
+    </ul>
+  </div>
 
     </body>
 </html>

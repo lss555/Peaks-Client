@@ -103,8 +103,6 @@ const deleteOnePeak = function (peak) {
 }
 
 const getAllPeaks = function () {
-  // store.peak = store.peak.description
-  // store.peak.name and store.peak.description has the goods
   return $.ajax({
     url: config.apiUrl + '/peaks',
     method: 'GET',

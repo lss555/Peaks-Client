@@ -4,6 +4,7 @@
   border-bottom: 2px solid black;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .authenticated {
@@ -33,7 +34,7 @@ h3 {
 }
 
 .createpeaks {
-  margin: 10px;
+  margin: 20px;
 }
 
 .signupdiv {
@@ -45,17 +46,25 @@ h3 {
 }
 
 .updatepeak {
-  margin: 10px;
+  margin: 20px;
 }
 
 .getonepeak {
-  margin: 10px
+  margin: 20px
 }
 
 .deleteonepeak {
-  margin: 10px;
+  margin: 20px;
 }
 
 .getallpeaks {
-  margin: 10px;
+  margin: 20px;
+}
+
+.gopm {
+  margin: 5px;
+}
+
+.dopm {
+  margin: 5px;
 }

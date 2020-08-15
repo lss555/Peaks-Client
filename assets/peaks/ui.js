@@ -1,10 +1,6 @@
 const store = require('../scripts/store')
 
-// const peaksTemplate = require('../scripts/templates/helpers/peak-list.handlebars')
-
-// const Handlebars = require('../../node_modules/handlebars/dist')
-
-const Handlebars = require('handlebars')
+const peaksPageTemplate = require('../scripts/templates/helpers/peak-list.handlebars')
 
 /* eslint-env jquery */
 
@@ -24,7 +20,6 @@ const signInSuccess = function (response) {
   $('#sign-in-message').text('Signed in!').show()
   store.user = response.user
   $('form').trigger('reset')
-  // console.log(store.peak) // undefined
 
   // hide and show for sign in
   $('#sign-up-message').hide()
@@ -40,6 +35,11 @@ const signInSuccess = function (response) {
   $('#get-all-peaks').show()
   $('#delete-one-peak').show()
   $('#findYourPeaks').hide()
+  $('.handlebarContainer').show()
+  $('#update-peak-message').show()
+  $('#get-one-peak-message').show()
+  $('#delete-one-peak-message').show()
+  $('#create-peak-message').show()
 }
 
 const signInFailure = function (data) {
@@ -72,11 +72,12 @@ const signOutSuccess = function (data) {
   $('#get-all-peaks').hide()
   $('#delete-one-peak').hide()
   $('#findYourPeaks').show()
-  $('#create-peak-message').hide()
+  $('#create-peak-message').hide().empty()
   $('.peaks-list-container').hide()
-  $('#update-peak-message').hide()
-  $('#get-one-peak-message').hide()
-  $('#delete-one-peak-message').hide()
+  $('#update-peak-message').hide().empty()
+  $('#get-one-peak-message').hide().empty()
+  $('#delete-one-peak-message').hide().empty()
+  $('.handlebarContainer').empty()
 }
 
 const signOutFailure = function (data) {
@@ -108,16 +109,11 @@ const updatePeakFailure = function () {
   $('form').trigger('reset')
 }
 
-//  get all peaks needs handlebars
 const getAllPeaksSuccess = function (data) {
-  // const peaksPageHtml = peaksPageTemplate({ peaks: data.peaks })
-  // $('#peaks-template').html()
-  // $('.handlebarContainer').append(peaksPageHtml)
   $('#get-all-peaks').ready(function () {
     // handle bars
-    const peaksTemplate = $('#peaks-template').html()
-    const compiledPeaksTemplate = Handlebars.compile(peaksTemplate)
-    $('.peaks-list-container').html(compiledPeaksTemplate(data))
+    const peaksPageHtml = peaksPageTemplate({ peaks: data.peaks })
+    $('.handlebarContainer').html(peaksPageHtml)
   // ending handlebars
   })
   $('#get-all-peaks-header').show()
@@ -126,21 +122,10 @@ const getAllPeaksSuccess = function (data) {
   $('form').trigger('reset')
 }
 
-// .text('Peak, ' + JSON.stringify(peakArray[i].name) + ' ID: ' + JSON.stringify(peakArray[i]._id))
-
 const getAllPeaksFailure = function () {
   $('#get-all-peaks-message').text('Failure on all')
   $('form').trigger('reset')
 }
-//
-// for loop for printing all peaks 27x time each
-// for (let i = 0; i < peakLength; i++) {
-//   console.log(peakArray[i].name)
-//   // $('ul').append()
-//   $('ul').append(peakArray.map(t => $('<li>').text(peakArray[i].name + ' ' + peakArray[i]._id)))
-// }
-
-// needs getOnePeak here
 
 const getOnePeakSuccess = function (data) {
   $('#get-one-peak-message').text('Peak found! ' + JSON.stringify('name: ' + data.peak.name + ', description: ' + data.peak.description))
