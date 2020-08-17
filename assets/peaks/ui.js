@@ -78,6 +78,7 @@ const signOutSuccess = function (data) {
   $('#get-one-peak-message').hide().empty()
   $('#delete-one-peak-message').hide().empty()
   $('.handlebarContainer').empty()
+  $('#get-all-peaks-message').empty()
 }
 
 const signOutFailure = function (data) {
@@ -110,6 +111,7 @@ const updatePeakFailure = function () {
 }
 
 const getAllPeaksSuccess = function (data) {
+  $('#get-all-peaks-message').text('Get all peaks Success!')
   $('#get-all-peaks').ready(function () {
     // handle bars
     const peaksPageHtml = peaksPageTemplate({ peaks: data.peaks })
