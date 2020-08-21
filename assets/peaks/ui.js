@@ -120,7 +120,7 @@ const getAllPeaksSuccess = function (data) {
   })
   $('#get-all-peaks-header').show()
   $('#change-password-message').hide()
-  $('#sign-in-message').hide()
+  $('#sign-in-message').empty()
   $('form').trigger('reset')
 }
 
