@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Push more peaks</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1 class="title">PEAKS🌋</h1>
+
+<div class="auth">
+  <div class=signupdiv>
+  <section id="sign-up-section">
+    <form id="sign-up">
+      <button type="submit" id-"sign-up-button">Sign Up</button>
+      <input name="credentials[email]" type="text" placeholder="Email here">
+      <input name="credentials[password]" type="password" placeholder="Password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password">
+    </form>
+  </section>
+  <p id="sign-up-message"></p>
+</div>
+
+  <!-- sign in -->
+<div class="signIn">
+  <form id="sign-in">
+    <button type="submit">Sign In</button>
+    <input name="credentials[email]" placeholder="email here" type="text">
+    <input name="credentials[password]" placeholder="password here" type="password">
+  </form>
+  <p id="sign-in-message"></p>
+</div>
+  <!-- change-password -->
+<div class="changepassworddiv">
+<form id="change-password">
+  <button type="submit">Change Password</button>
+  <input name="passwords[old]" type="password" placeholder="Old Password">
+  <input name="passwords[new]" type="password" placeholder="New Password">
+</form>
+<p id="change-password-message"></p>
+</div>
+<!-- sign out -->
+
+<div class="signoutdiv">
+  <form id="sign-out">
+    <button type="submit">Sign Out</button>
+  </form>
+</div>
+</div>
+<h3 id="findYourPeaks">Sign in to find your peaks!</h3>
+
+<!-- create a peak -->
+<div class="createpeaks">
+<form id="create-peak">
+<button type="submit">Log New Peak</button>
+<input name="name" type="text" placeholder="Peak Name">
+<input name="description" type="text" placeholder="description">
+</form>
+<p id="create-peak-message"></p>
+</div>
+<!-- update peak -->
+
+<div class="updatepeak">
+<form id="update-peak">
+<button type="submit">Update Peak</button>
+<input name="id" type="text" placeholder="Peak ID">
+<input name="description" type="text" placeholder="Update description">
+</form>
+<p id="update-peak-message"></p>
+</div>
+<!-- get one peak -->
+<div class="getonepeak">
+<form id="get-one-peak">
+  <button>Find One Peak</button>
+  <input name="id" type="text" placeholder="Peak ID">
+</form>
+<p id="get-one-peak-message" class="gopm"></p>
+</div>
+<!-- Delete one peak -->
+
+<div class="deleteonepeak">
+<form id="delete-one-peak">
+  <button>Delete One Peak</button>
+  <input name="id" type="text" placeholder="Peak ID">
+</form>
+<p id="delete-one-peak-message" class="dopm"></p>
+</div>
+<!-- get all peaks -->
+<div class="getallpeaks">
+<div id="get-all-peaks">
+<button>Get all peaks and peak ID's</button>
+<p id="get-all-peaks-message"></p>
+</div>
+</div>
+
+  <div class="handlebarContainer">
+    <ul id="peaks">
+    </ul>
+  </div>
+
+    </body>
+</html>
